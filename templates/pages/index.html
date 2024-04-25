@@ -79,63 +79,28 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="single-tranding">
-                        <a href="product-details.html">
-                            <div class="tranding-pro-img">
-                                <img src="{% static 'img/product/tranding-1.jpg' %}" alt="">
-                            </div>
-                            <div class="tranding-pro-title">
-                                <h3>Meyoji Robast Drone</h3>
-                                <h4>Drone</h4>
-                            </div>
-                            <div class="tranding-pro-price">
-                                <div class="price_box">
-                                    <span class="current_price">$70.00</span>
-                                    <span class="old_price">$80.00</span>
+                {% for product in products %}
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                        <div class="single-tranding">
+                            <a href="product-details.html">
+                                <div class="tranding-pro-img">
+                                    <img src="{% static 'img/product/tranding-1.jpg' %}" alt="">
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="single-tranding">
-                        <a href="product-details.html">
-                            <div class="tranding-pro-img">
-                                <img src="{% static 'img/product/tranding-2.jpg' %}" alt="">
-                            </div>
-                            <div class="tranding-pro-title">
-                                <h3>Ut praesentium earum</h3>
-                                <h4>Mevrik</h4>
-                            </div>
-                            <div class="tranding-pro-price">
-                                <div class="price_box">
-                                    <span class="current_price">$70.00</span>
-                                    <span class="old_price">$80.00</span>
+                                <div class="tranding-pro-title">
+                                    <h3>Meyoji Robast Drone</h3>
+                                    <h4>Drone</h4>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="single-tranding">
-                        <a href="product-details.html">
-                            <div class="tranding-pro-img">
-                                <img src="{% static 'img/product/tranding-3.jpg' %}" alt="">
-                            </div>
-                            <div class="tranding-pro-title">
-                                <h3>Consectetur adipisicing</h3>
-                                <h4>Flyer</h4>
-                            </div>
-                            <div class="tranding-pro-price">
-                                <div class="price_box">
-                                    <span class="current_price">$70.00</span>
-                                    <span class="old_price">$80.00</span>
+                                <div class="tranding-pro-price">
+                                    <div class="price_box">
+                                        <span class="current_price">${{product.product_price}}</span>
+                                        <span class="old_price">$80.00</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </section><!--Tranding product-->
@@ -200,7 +165,7 @@
                             <li>If you are going to use a</li>
                             <li>Alteration in some form, by injected</li>
                         </ul>
-                        <a href="#">$70 Buy now</a>
+                        <a href="#">Buy now</a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 order-lg-3 order-md-4 order-sm-4 order-4">
@@ -215,7 +180,7 @@
                             <li>If you are going to use a</li>
                             <li>Alteration in some form, by injected</li>
                         </ul>
-                        <a href="#">$70 Buy now</a>
+                        <a href="#">Buy now</a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 order-lg-4 order-md-3 order-sm-3 order-3">
@@ -337,81 +302,6 @@
         </div>    
     </div> {% endcomment %}
     <!--product details end-->
-
-    
-
-    
-    <!--Other product-->
-    <section class="pt-60 pb-30">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <div class="section-title">
-                        <h2>Other collections</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="single-tranding mb-30">
-                        <a href="product-details.html">
-                            <div class="tranding-pro-img">
-                                <img src="{% static "img/product/tranding-1.jpg" %}" alt="">
-                            </div>
-                            <div class="tranding-pro-title">
-                                <h3>Meyoji Robast Drone</h3>
-                                <h4>Drone</h4>
-                            </div>
-                            <div class="tranding-pro-price">
-                                <div class="price_box">
-                                    <span class="current_price">$70.00</span>
-                                    <span class="old_price">$80.00</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="single-tranding mb-30">
-                        <a href="product-details.html">
-                            <div class="tranding-pro-img">
-                                <img src="{% static "img/product/tranding-2.jpg" %}" alt="">
-                            </div>
-                            <div class="tranding-pro-title">
-                                <h3>Ut praesentium earum</h3>
-                                <h4>Mevrik</h4>
-                            </div>
-                            <div class="tranding-pro-price">
-                                <div class="price_box">
-                                    <span class="current_price">$70.00</span>
-                                    <span class="old_price">$80.00</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
-                    <div class="single-tranding mb-30">
-                        <a href="product-details.html">
-                            <div class="tranding-pro-img">
-                                <img src="{% static "img/product/tranding-3.jpg" %}" alt="">
-                            </div>
-                            <div class="tranding-pro-title">
-                                <h3>Consectetur adipisicing</h3>
-                                <h4>Flyer</h4>
-                            </div>
-                            <div class="tranding-pro-price">
-                                <div class="price_box">
-                                    <span class="current_price">$70.00</span>
-                                    <span class="old_price">$80.00</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!--Other product-->
 
     <!--Testimonials-->
     <section class="pb-60 pt-60 gray-bg">
