@@ -162,7 +162,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
                             <div class="logo">
-                                <a href="index-2.html"><img src="{% static "img/logo/logo.png" %}" alt=""></a>
+                                <a href="{% url 'home' %}"><img src="{% static "img/logo/logo.png" %}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-6">
@@ -247,7 +247,7 @@
                             <div class="main_menu menu_position"> 
                                 <nav>  
                                     <ul>
-                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="{% url 'home' %}">home</a></li>
                                         <li><a href="product-details.html">Product</a></li>
                                         
                                         
@@ -260,8 +260,8 @@
                                         <li><a href="contact.html"> Contact Us</a></li>
                                     </ul>  
                                     <ul>
-                                        <li><a href="login.html"> LogIn</a></li>
-                                        <li><a href="register.html"> Register</a></li>
+                                        <li><a href="{% url 'login' %}"> LogIn</a></li>
+                                        <li><a href="{% url 'register' %}"> Register</a></li>
                                     </ul>
                                 </nav> 
                             </div>

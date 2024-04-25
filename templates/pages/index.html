@@ -79,27 +79,31 @@
                 </div>
             </div>
             <div class="row justify-content-center">
+                {% if products %}
                 {% for product in products %}
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                         <div class="single-tranding">
                             <a href="product-details.html">
                                 <div class="tranding-pro-img">
-                                    <img src="{% static 'img/product/tranding-1.jpg' %}" alt="">
+                                    <img src="{{product.product_img.url}}" alt="">
                                 </div>
                                 <div class="tranding-pro-title">
-                                    <h3>Meyoji Robast Drone</h3>
-                                    <h4>Drone</h4>
+                                    <h3>{{product.product_title}}</h3>
+                                    <h4>{{product.product_name}}</h4>
                                 </div>
                                 <div class="tranding-pro-price">
                                     <div class="price_box">
                                         <span class="current_price">${{product.product_price}}</span>
-                                        <span class="old_price">$80.00</span>
+                                        <span class="old_price">${{product.old_price}}</span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
                 {% endfor %}
+                {% else %}
+                    <h1>No trending products found!</h1>
+                {% endif %}
                 
             </div>
         </div>
