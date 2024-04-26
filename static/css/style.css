@@ -7498,6 +7498,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .contact_message button:hover {
   background: #1D1678;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .contact_message.content {
     margin-bottom: 52px;
