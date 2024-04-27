@@ -25,11 +25,12 @@
                             </ul>
                         </div> 
                         <div class="search_container">
-                           <form action="#">
-                                <div class="search_box">
-                                    <input placeholder="Search product..." type="text">
-                                    <button type="submit">Search</button> 
-                                </div>
+                            <form action="{% url 'search'%}" method="POST">
+                                {% csrf_token %}
+                                    <div class="search_box">
+                                        <input placeholder="Search product..." type="text" name="searched">
+                                        <button type="submit">Search</button> 
+                                    </div>
                             </form>
                         </div> 
                         
@@ -168,9 +169,10 @@
                         <div class="col-lg-9 col-md-6">
                             <div class="middel_right">
                                 <div class="search_container">
-                                   <form action="#">
+                                   <form action="{% url 'search'%}" method="POST">
+                                    {% csrf_token %}
                                         <div class="search_box">
-                                            <input placeholder="Search product..." type="text">
+                                            <input placeholder="Search product..." type="text" name="searched">
                                             <button type="submit">Search</button> 
                                         </div>
                                     </form>
@@ -260,8 +262,12 @@
                                         <li><a href="contact.html"> Contact Us</a></li>
                                     </ul>  
                                     <ul>
-                                        <li><a href="{% url 'login' %}"> LogIn</a></li>
-                                        <li><a href="{% url 'register' %}"> Register</a></li>
+                                        {% if user.is_authenticated %}
+                                            <li><a href="{% url 'logout' %}"> Log Out</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'login' %}"> LogIn</a></li>
+                                            <li><a href="{% url 'register' %}"> Register</a></li>
+                                        {% endif %}                                      
                                     </ul>
                                 </nav> 
                             </div>
