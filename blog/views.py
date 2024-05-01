@@ -1,20 +1,18 @@
-from django.shortcuts import render
-from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from django.shortcuts import render,get_object_or_404
 from .models import Blogs
 
 def blogs(request):
     blogs = Blogs.objects.all()
     return render(request, 'blog/blogs.html', {'blogs': blogs})
 
-
-def paginator(request):
-    blogs = Blogs.objects.order_by('-list_date').filter(is_published=True)
-    paginator = Paginator(blogs, 2)
-
-    page = request.GET.get('page')
-    paged_listings = paginator.get_page(page)
+def blog(request,blog_id):
+    blog = get_object_or_404(Blogs, pk = blog_id)
+    blogs = Blogs.objects.all()
     context = {
-        'blogs': paged_listings,
+        'blog': blog,
+        'blogs' : blogs
     }
-    return render(request, 'blog/blogs.html', context)
+    return render(request, 'blog/blog.html',context)
+
+
 
