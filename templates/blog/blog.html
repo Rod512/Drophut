@@ -133,8 +133,9 @@
                 <div class="blog_sidebar_widget">
                     <div class="widget_list widget_search">
                         <h3>Search  Blogs</h3>
-                        <form action="#">
-                            <input placeholder="Search..." type="text">
+                        <form action="{% url 'blog_search' %}" method='POST'>
+                            {% csrf_token %}
+                            <input placeholder="Search..." type="text" name='blog_searched' >
                             <button type="submit">search</button>
                         </form>
                     </div>

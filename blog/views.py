@@ -15,4 +15,12 @@ def blog(request,blog_id):
     return render(request, 'blog/blog.html',context)
 
 
+def blog_search(request):
+    if request.method == 'POST':
+        blog_searched = request.POST['blog_searched']
+        blog = Blogs.objects.filter(title__contains = blog_searched)
+        return render(request, 'blog/blog.html',{'blog_searched':blog_searched,'blogs':blog}) 
+    else:
+        return render(request, 'blog/blog.html') 
+
 
