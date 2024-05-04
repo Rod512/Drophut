@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from django.db import models
 
 class Blogs(models.Model):
@@ -10,3 +9,10 @@ class Blogs(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    name = models.CharField(max_length=255)
+    post_id = models.ForeignKey(Blogs,on_delete=(models.CASCADE))
+    email = models.EmailField()
+    message = models.TextField('Message')
+    date_comment = models.DateTimeField(default=datetime.now, blank=False)
