@@ -95,22 +95,18 @@
                         <div id="menu" class="text-left ">
                             <ul class="offcanvas_main_menu">
                                 <li class="menu-item-has-children active">
-                                    <a href="#">Home</a>
+                                    <a href="{% url 'home' %}">Home</a>
                                 </li>
                                
                                 
                                 <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                    </ul>
+                                    <a href="{% url 'blogs' %}">blog</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="login.html">my account</a>
+                                    <a href="{% url 'home' %}">my account</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="contact.html"> Contact Us</a> 
+                                    <a href="{% url 'contact' %}"> Contact Us</a> 
                                 </li>
                             </ul>
                         </div>
@@ -255,7 +251,7 @@
                                                 <li><a href="blog-details.html">blog details</a></li>
                                             </ul> {% endcomment %}
                                         </li>
-                                        <li><a href="contact.html"> Contact Us</a></li>
+                                        <li><a href="{% url 'contact' %}"> Contact Us</a></li>
                                     </ul>  
                                     <ul>
                                         {% if user.is_authenticated %}
