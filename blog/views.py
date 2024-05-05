@@ -7,22 +7,21 @@ def blogs(request):
     return render(request, 'blog/blogs.html', {'blogs': blogs})
 
 def blog(request,blog_id):
-    if request.method == "POST":
-        message = request.POST['message']
-        name = request.POST['name']
-        email = request.POST['email']
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        post_id = Blogs.objects.get(id=blog_id)
+        comment = Comment(name=name,email=email,message=message, post_id=post_id)
+        comment.save()
 
-        query = Comment(message = message)
-        query.name = name
-        query.email = email
-        query.save()
-    comment = Comment.objects.filter(post_id = blog_id)
     blog = get_object_or_404(Blogs, pk = blog_id)
     blogs = Blogs.objects.all()
+    comments = Comment.objects.filter(post_id=blog.id)
     context = {
         'blog': blog,
         'blogs' : blogs,
-        'comments' : comment,
+        'comments': comments
     }
     return render(request, 'blog/blog.html',context)
 

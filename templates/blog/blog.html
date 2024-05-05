@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
 
 <!--blog body area start-->
 <div class="blog_details mt-60">
@@ -56,7 +57,7 @@
                                 {% for com in comments  %}
                                     <div class="comment_list">
                                         <div class="comment_thumb">
-                                            <img src="assets/img/blog/comment3.png.jpg" alt="">
+                                            {% comment %} <img src="{{}}" alt=""> {% endcomment %}
                                         </div>
                                         <div class="comment_content">
                                             <div class="comment_meta">
