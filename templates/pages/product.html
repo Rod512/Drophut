@@ -91,7 +91,7 @@
                             <div class="product_variant quantity">
                                 <label>quantity</label>
                                 <input min="1" max="100" value="1" type="number">
-                                <button class="button" type="submit">Buy now</button>  
+                                <a class="button" href="{% url "add_cart" products.id %}" type="submit">Buy now</a>  
                                 
                             </div>
                             <div class="product_meta">
