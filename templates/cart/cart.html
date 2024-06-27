@@ -21,28 +21,32 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% if not cart_items %}
+                            <h1 class="text-center">No cart item added</h1>
+                            {% else %}
                             {% for cart_item in cart_items %}
                             <tr>
                                 <td class="product_thumb"><a href="#"><img src="{{cart_item.product.product_img.url}}" alt=""></a></td>
-                                <td class="product_name"><a href="#">{{cart_item.product.product_name}}</a></td>
+                                <td class="product_name"><a href="#">{{cart_item.product.product_title}}</a></td>
                                 <td class="product-price">${{cart_item.product.product_price}}</td>
                                 <td class="product_quantity"><label>Quantity</label>
-                                    <a href=""><i class="fa-solid fa-minus"></i></a>
+                                    <a href="{% url "remove_cart" cart_item.product.id %}"><i class="fa-solid fa-minus"></i></a>
                                     <input type='text' max="100" value="{{cart_item.quantity}}">
                                     <a href="{% url "add_cart" cart_item.product.id %}"> <i class="fa-solid fa-plus"></i></a> 
                                     
                                 </td>
                                 <td class="product_total">${{cart_item.sub_total}}</td>
-                                <td class="product_remove"><a href="#"><i class="ion-android-close"></i></a></td>
+                                <td class="product_remove"><a href="{% url "remove_cart_item" cart_item.product.id %}"><i class="ion-android-close"></i></a></td>
                             </tr>
                             {% endfor %}
+                            {% endif %}
 
                         </tbody>
                     </table>   
-                        </div>  
-                        <div class="cart_submit">
-                            <a href="{% url "home" %}" class='btn btn-primary text-white'>Continue Shoping</a>
-                        </div>      
+                        </div>        
+                    </div>
+                    <div class="cart_submit">
+                        <a href="{% url "home" %}" class='btn btn-primary text-white'>Continue Shoping</a>
                     </div>
                 </div>
             </div>
