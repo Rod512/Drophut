@@ -77,5 +77,15 @@ def cart(request,total=0, quantity=0, cart_items= None,):
     }
     return render(request, 'cart/cart.html',context)
 
-def checkout(request):
-    return render(request, 'cart/checkout.html')
+# def checkout(request,product_id):
+#     cart = Cart.objects.get(cart_id=_cart_id(request))
+#     product = get_object_or_404(Products_listing,id=product_id)
+#     cart_item = CartItem.objects.get(product=product, cart=cart)
+#     quantity = cart_item.quantity
+#     context = {
+#         'product': product,
+#         'quantity': quantity,
+#         'cart' : cart,
+#         'cart_item' : cart_item
+#     }
+#     return render(request, 'cart/checkout.html',context)
