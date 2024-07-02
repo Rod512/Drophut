@@ -224,24 +224,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for cart_items in cart_item %}{% endfor %}
+                                    {% for cart_item in cart_items %}
                                     <tr>
-                                        <td> {{cart_items.product.product_title}} <strong> × 2</strong></td>
-                                        <td> $165.00</td>
+                                        <td> {{cart_item.product.product_title}} <strong> × {{cart_item.quantity}}</strong></td>
+                                        <td> ${{cart_item.sub_total}}</td>
                                     </tr>
+                                    {% endfor %}
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Cart Subtotal</th>
-                                        <td>$215.00</td>
+                                        <td>${{total}}</td>
                                     </tr>
                                     <tr>
-                                        <th>Shipping</th>
-                                        <td><strong>$5.00</strong></td>
+                                        <th>Tax</th>
+                                        <td><strong>${{tax}}</strong></td>
                                     </tr>
                                     <tr class="order_total">
                                         <th>Order Total</th>
-                                        <td><strong>$220.00</strong></td>
+                                        <td><strong>${{grand_total}}</strong></td>
                                     </tr>
                                 </tfoot>
                             </table>     

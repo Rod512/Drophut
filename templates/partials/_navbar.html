@@ -40,44 +40,9 @@
                             </div>
                             <div class="mini_cart_wrapper">
                                 <a href="javascript:void(0)"><img src="{% static 'img/shopping-bag.png' %}" alt=""></a>
-                                <span class="cart_quantity">2</span>
+                                <span class="cart_quantity">{{cart_count}}</span>
                                 <!--mini cart-->
-                                 <div class="mini_cart">
-                                    <div class="cart_item">
-                                       <div class="cart_img">
-                                           <a href="#"><img src="{% static 'img/s-product/product.jpg' %}" alt=""></a>
-                                       </div>
-                                        <div class="cart_info">
-                                            <a href="#">Sit voluptatem rhoncus sem lectus</a>
-                                            <p>Qty: 1 X <span> $60.00 </span></p>    
-                                        </div>
-                                        <div class="cart_remove">
-                                            <a href="#"><i class="ion-android-close"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="cart_item">
-                                       <div class="cart_img">
-                                           <a href="#"><img src="{% static 'img/s-product/product2.jpg' %}" alt=""></a>
-                                       </div>
-                                        <div class="cart_info">
-                                            <a href="#">Natus erro at congue massa commodo</a>
-                                            <p>Qty: 1 X <span> $60.00 </span></p>   
-                                        </div>
-                                        <div class="cart_remove">
-                                            <a href="#"><i class="ion-android-close"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="mini_cart_table">
-                                        <div class="cart_total">
-                                            <span>Sub total:</span>
-                                            <span class="price">$138.00</span>
-                                        </div>
-                                        <div class="cart_total mt-10">
-                                            <span>total:</span>
-                                            <span class="price">$138.00</span>
-                                        </div>
-                                    </div>
-
+                                <div class="mini_cart">
                                     <div class="mini_cart_footer">
                                        <div class="cart_button">
                                             <a href="{% url "cart" %}">View cart</a>
@@ -85,9 +50,7 @@
                                         <div class="cart_button">
                                             <a href="#">Checkout</a>
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <!--mini cart end-->
                             </div>
@@ -143,7 +106,7 @@
                             <div class="top_right text-right">
                                 <ul>
                                    <li><a href="my-account.html">Account</a></li> 
-                                   <li><a href="#">Checkout</a></li> 
+                                   <li><a href="{% url "checkout" %}">Checkout</a></li> 
                                 </ul>
                             </div>   
                         </div>
@@ -177,54 +140,17 @@
                                     </div>
                                     <div class="mini_cart_wrapper">
                                         <a href="javascript:void(0)"><img src="{% static "img/shopping-bag.png" %}" alt=""></a>
-                                        <span class="cart_quantity">2</span>
+                                        <span class="cart_quantity">{{cart_count}}</span>
                                         <!--mini cart-->
-                                         <div class="mini_cart">
-                                            <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="{% static 'img/s-product/product.jpg' %}" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Sit voluptatem rhoncus sem lectus</a>
-                                                    <p>Qty: 1 X <span> $60.00 </span></p>    
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="{% static 'img/s-product/product2.jpg' %}" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Natus erro at congue massa commodo</a>
-                                                    <p>Qty: 1 X <span> $60.00 </span></p>   
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="mini_cart_table">
-                                                <div class="cart_total">
-                                                    <span>Sub total:</span>
-                                                    <span class="price">$138.00</span>
-                                                </div>
-                                                <div class="cart_total mt-10">
-                                                    <span>total:</span>
-                                                    <span class="price">$138.00</span>
-                                                </div>
-                                            </div>
-
+                                        <div class="mini_cart">
                                             <div class="mini_cart_footer">
                                                <div class="cart_button">
                                                     <a href="{% url "cart" %}">View cart</a>
                                                 </div>
                                                 <div class="cart_button">
-                                                    <a href="#">Checkout</a>
+                                                    <a href="{% url "checkout" %}">Checkout</a>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                         <!--mini cart end-->
                                     </div>
